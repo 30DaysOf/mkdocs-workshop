@@ -1,0 +1,26 @@
+// Dev Container:
+// Format: https://aka.ms/devcontainer.json. 
+// Config: https://github.com/devcontainers/templates/tree/main/src/python
+// Dockerfile Usage: https://containers.dev/guide/dockerfile
+{
+    "name": "Mkdocs Workshop Template",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    "postCreateCommand": "bash .devcontainer/post-create.sh",
+    "forwardPorts": [
+        8000
+    ]
+}
